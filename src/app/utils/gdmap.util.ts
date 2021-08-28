@@ -4,7 +4,7 @@ import {load }  from '@amap/amap-jsapi-loader';
  * 高德地图工具类
  */
 //高德控制台申请创建的key，必填
-const mapKey='123456';
+const mapKey='9c980d07975d0fcb86425520286312db';
 export class GdMap{
     map: any;//地图
     Amap: any;//操作地图用的工具类
@@ -119,7 +119,7 @@ export class GdMap{
      * @param success 成功回调
      * @param error 失败回调
      */
-    public weatherInfo(city:string,success,error){
+    public weatherInfo(city:string,success,forecast,error){
         let self = this;
         //加载天气查询插件
         this.Amap.plugin('AMap.Weather', function() {
@@ -133,6 +133,7 @@ export class GdMap{
             //执行未来天气信息查询
             weather.getForecast(city, function(err, data) {
               console.log(err, data);
+              forecast(data)
             });
         });
     }

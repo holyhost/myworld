@@ -1,13 +1,36 @@
-
+#app-container{
+    background: gray;
+}
 .app-menu{
     position: fixed;
-    width: 2rem;
-    height: 2rem;
-    background-color: red;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
     z-index: 100;
-    right: .6rem;
+    right: .8rem;
+    top: .6rem;
 }
 
 .app-menu:hover{
     background-color: green;
+}
+
+.menu-list{
+    position: fixed;
+    // width: 6rem;
+    right: .8rem;
+    top: 2.6rem;
+    z-index: 100;
+    text-align: right;
+    background-color: gray;
+    opacity: .5;
+    letter-spacing: .2rem;
+    padding: .2rem;
+    border-radius: .4rem;
+}
+
+.menu-list-item{
+    font-size: .8rem;
+    height: 1rem;
+    vertical-align: middle;
 }

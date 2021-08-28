@@ -1,33 +1,49 @@
 <div class="weather-container card-container">
-    <div class="sun">
-        
+    <!-- <div class="sun">
+
+    </div> -->
+    <div class="weather-icon">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-qingtian"></use>
+        </svg>
     </div>
     <!-- 实时天气信息 -->
     <div class="temperature">
         <div class="temper-number">
-            38℃            
+            <span *ngIf="data.weatherInfo">{{data.weatherInfo.temperature}}</span>            
+            <span *ngIf="!data.weatherInfo">0</span>            
+            <span>℃</span>            
         </div>
         <div class="temper-text">
-            晴
+            <span *ngIf="data.weatherInfo">{{data.weatherInfo.weather}}</span>            
+            <span *ngIf="!data.weatherInfo">未知</span>  
         </div>
     </div>
     <!-- 地名，时间信息 -->
     <div class="other-info">
-        <div class="location">广州市</div>
+        <div class="location">
+            <span *ngIf="data.aimCity">{{data.aimCity}}</span>
+        </div>
         <div class="date-info">
-            星期一|8月12号|12:12
+            {{dateUtil.getWeekDay(curDate)}}&nbsp;&nbsp;{{curDate | date:'yyyy/MM/dd'}}
+            <br>
+            {{curDate | date: 'H:mm:ss'}}
         </div>
     </div>
     <!-- 天气预报 -->
-    <div class="forecast">
-        <div class="fore-item" *ngFor="let item of [1,2,3,4]">
-            <div class="item-week">星期一</div>
+    <div class="forecast" *ngIf="data.forecasts&&data.forecasts.forecasts">
+        <div class="fore-item" *ngFor="let item of data.forecasts.forecasts">
+            <div class="item-week">星期{{item.week}}</div>
             <div class="item-icon">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-qingtian"></use>
                 </svg>
             </div>
-            <div class="item-temp">37℃</div>
+            <div class="item-temp">{{item.dayTemp}}℃</div>
         </div>
+    </div>
+    <!-- 没有天气预报信息的时候，占位 -->
+    <div *ngIf="!data.forecasts" style="font-size: 1.5rem;">
+        <p></p>
     </div>
 </div>

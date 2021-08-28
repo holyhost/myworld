@@ -1,5 +1,33 @@
-<div id="app-container">
-    <a class="app-menu" (click)=onMenuClick()></a>
+<div id="app-container" class="card-container" (click)="pageClick()">
+    
+    <!-- <div class="app-menu" (click)=onMenuClick()> -->
+        <svg class="icon" 
+            aria-hidden="true" 
+            class="app-menu"
+            (click)=onMenuClick($event)>
+            <use [attr.xlink:href]="changeMenuIcon()"></use>
+        </svg>
+    <!-- </div> -->
+    <!-- <ng-template let-curIcon="#icon-ditu">
+        <svg class="icon" aria-hidden="true" class="app-menu" (click)=onMenuClick()>
+            <use xlink:href='{{curIcon}}'></use>
+        </svg>
+    </ng-template> -->
+    
     <app-map *ngIf="curIndex ===0"></app-map>
     <app-weather *ngIf="curIndex ===1"></app-weather>
+    <app-setting *ngIf="curIndex ===2"></app-setting>
+
+    
+    <div class="menu-list" *ngIf="open">
+            <div class="menu-list-item" *ngFor="let item of menu; let i = index" (click)=onMenuItemClick(i)>
+                <span>{{item.label}}&nbsp;</span>
+                <span>
+                    <svg class="icon" aria-hidden="true">
+                        <use [attr.xlink:href]="item.icon"></use>
+                    </svg>
+                </span>
+            </div>
+    </div>
+   
 </div>

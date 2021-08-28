@@ -1,14 +1,19 @@
 @import url('../../../assets/css/sun.scss');
 .weather-container{
-    background-color: #bebebe;
+    background-color: transparent;
     text-align: center;
     color: white;
+}
+.weather-icon{
+    font-size: 6rem;
+    position: absolute;
 }
 
 .temperature{
     color: white;
     font-size: 2.2rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    text-align: right;
 }
 
 .temper-text{
@@ -16,7 +21,7 @@
 }
 
 .other-info{
-    margin-top: 3rem;
+    margin-top: -4rem;
 }
 
 .forecast{

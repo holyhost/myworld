@@ -1,5 +1,6 @@
 import { AfterViewInit } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 import { GdMap } from 'src/app/utils/gdmap.util';
 
 @Component({
@@ -11,7 +12,9 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   mapUtil: GdMap;//在nginit的时候初始化
 
-  constructor() { }
+  constructor(
+    public data: DataService
+  ) { }
 
   ngOnInit() {
     //实例化地图，地图才能显示，默认显示的是北京
@@ -23,6 +26,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     this.mapUtil = new GdMap('container')
     //地图初始化需要时间。这边暂停一下
     await this.mapUtil.sleep(1200);
+    this.data.mapUtil = this.mapUtil
     this.mapUtil.location(success=>{
       console.log(success)
       let position = [success.position.lng,success.position.lat]
@@ -31,16 +35,11 @@ export class MapComponent implements OnInit, AfterViewInit {
     },error=>{
       console.log(error)
     })
-    // this.mapUtil.locateByIP(success=>{
-    //   console.log(success)
-    //   this.mapUtil.map.opts.center([success.position])
-    // },error=>{
-    //   console.log(error)
-    // })
-    this.mapUtil.weatherInfo('番禺区',res=>{
-      console.log(res)
-    },err=>{
-      console.log(err)
+    this.mapUtil.locateByIP(success=>{
+      console.log(success)
+      this.data.aimCity = success.city
+    },error=>{
+      console.log(error)
     })
   }
 
