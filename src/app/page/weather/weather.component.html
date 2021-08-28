@@ -1,1 +1,33 @@
-<p>weather works!</p>
+<div class="weather-container card-container">
+    <div class="sun">
+        
+    </div>
+    <!-- 实时天气信息 -->
+    <div class="temperature">
+        <div class="temper-number">
+            38℃            
+        </div>
+        <div class="temper-text">
+            晴
+        </div>
+    </div>
+    <!-- 地名，时间信息 -->
+    <div class="other-info">
+        <div class="location">广州市</div>
+        <div class="date-info">
+            星期一|8月12号|12:12
+        </div>
+    </div>
+    <!-- 天气预报 -->
+    <div class="forecast">
+        <div class="fore-item" *ngFor="let item of [1,2,3,4]">
+            <div class="item-week">星期一</div>
+            <div class="item-icon">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-qingtian"></use>
+                </svg>
+            </div>
+            <div class="item-temp">37℃</div>
+        </div>
+    </div>
+</div>

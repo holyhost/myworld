@@ -9,6 +9,7 @@ export class GdMap{
     map: any;//地图
     Amap: any;//操作地图用的工具类
     city: string = ''
+    mapReady: boolean = false;//用来判断地图初始化好了没有
 
     constructor(divId:string='container') {
         let self = this;
@@ -28,12 +29,27 @@ export class GdMap{
               self.map = new AMap.Map(divId);
               //保存AMap，后面调用地图各个插件都用得到
               self.Amap = AMap
+              self.mapReady = true;
           }).catch(e => {
               console.log("初始化地图失败！")
               console.log(e);
+              self.mapReady = false;
           })
     }
+    sleep(millisecond){
+      return new Promise(resolve=>{
+        setTimeout(() => {
+          resolve('aaa')
+        }, millisecond);
+      })
+    }
 
+    async doSleep(){
+      const start = new Date().getTime();
+       console.log("执行开始",start);
+       await this.sleep(3000);
+       console.log("执行结束",new Date().getTime() - start)
+    }
     /**
      * 通用定位
      * @param success 成功回调
@@ -114,10 +130,14 @@ export class GdMap{
                 success(data)
                 error(err)
             });
+            //执行未来天气信息查询
+            weather.getForecast(city, function(err, data) {
+              console.log(err, data);
+            });
         });
     }
 
-    //添加默认的marker
+    //添加默认的marker,不需要做图片偏移处理
     public addMarker(lng:any , lat: any){
         if(this.Amap){
           let marker = new this.Amap.Marker({
@@ -147,5 +167,23 @@ export class GdMap{
             clickable: true
         })
         this.map.add(circle)
+    }
+
+    public addSelfMarker(lng,lat){
+      let marker = new this.Amap.LabelMarker({
+          // size: new this.Amap.Size(128, 128),    // 图标尺寸
+          icon: {
+            image:'assets/img/location_self.png',
+            anchor: 'bottom-center',
+            size: [30, 30],
+            clipOrigin : [0,-2]
+            
+          }, // 自定义点标记
+          position: [lng,lat], // 基点位置
+          // offset: new this.Amap.Pixel(0,0), // 设置点标记偏移量
+          // anchor:'bottom-left', // 设置锚点方位,默认左上方
+          // imageSize: new this.Amap.Size(20, 20)   // 根据所设置的大小拉伸或压缩图片
+      });
+      this.map.add(marker);
     }
 }

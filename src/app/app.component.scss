@@ -1,1 +1,13 @@
-#container {width:100%; height: 300px; }  
+
+.app-menu{
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    background-color: red;
+    z-index: 100;
+    right: .6rem;
+}
+
+.app-menu:hover{
+    background-color: green;
+}

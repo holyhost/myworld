@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.card-container{
+    margin: .2rem;
+    padding: .5rem .8rem;
+    border-radius: .4rem;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }

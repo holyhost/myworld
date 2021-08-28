@@ -1,4 +1,5 @@
-<div>
-    <app-map></app-map>
-    <app-weather></app-weather>
+<div id="app-container">
+    <a class="app-menu" (click)=onMenuClick()></a>
+    <app-map *ngIf="curIndex ===0"></app-map>
+    <app-weather *ngIf="curIndex ===1"></app-weather>
 </div>

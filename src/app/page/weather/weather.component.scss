@@ -1,0 +1,38 @@
+@import url('../../../assets/css/sun.scss');
+.weather-container{
+    background-color: #bebebe;
+    text-align: center;
+    color: white;
+}
+
+.temperature{
+    color: white;
+    font-size: 2.2rem;
+    margin-top: 2rem;
+}
+
+.temper-text{
+    font-size: 1.5rem;
+}
+
+.other-info{
+    margin-top: 3rem;
+}
+
+.forecast{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fore-item{
+
+}
+
+.item-icon{
+    margin-top: .8rem;
+    font-size: 1.8rem;
+}
+.item-temp{
+    margin-top: .8rem;
+}
