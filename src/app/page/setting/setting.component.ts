@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-setting',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./setting.component.scss']
 })
 export class SettingComponent implements OnInit {
-
-  constructor() { }
+  city:string = ''
+  constructor(public data: DataService) { }
 
   ngOnInit() {
+  }
+
+
+  save(event){
+    this.data.aimCity = this.city
+    event.stopPropagation()
   }
 
 }

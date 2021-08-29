@@ -1,3 +1,8 @@
 <div class="setting-container">
-    setting
+    <div class="title">设置</div>
+    <div class="city-container">
+        <span class="city-label">城市</span>
+        <input class="city" type='text' placeholder='输入城市' [(ngModel)]="city">
+    </div>
+    <input class="btn-save" type="button" value="保存" (click)="save($event)">
 </div>

@@ -1,3 +1,36 @@
 .setting-container{
     background: transparent;
 }
+.city-container{
+    vertical-align: middle;
+    line-height: 1.5rem;
+    height: 1.5rem;
+}
+.city-label{
+    line-height: 1.5rem;
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+.city{
+    width: 6rem;
+    padding: .2rem .5rem;
+    border-radius: 3px;
+    border: 1px solid #7e7e7e;
+}
+.city:focus{
+    outline: none;
+    border: 1px solid #3880ff;
+}
+.btn-save{
+    margin-top: .4rem;
+    color: white;
+    background: #3880ff;
+    border: none;
+    padding: .2rem .6rem;
+    border-radius: .5rem;
+}
+
+.btn-save:active{
+    background: #003ca5;
+}

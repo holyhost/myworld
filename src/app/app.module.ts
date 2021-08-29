@@ -7,6 +7,7 @@ import { MapComponent } from './page/map/map.component';
 import { WeatherComponent } from './page/weather/weather.component';
 import { MessageComponent } from './page/message/message.component';
 import { SettingComponent } from './page/setting/setting.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SettingComponent } from './page/setting/setting.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
