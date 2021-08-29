@@ -7,7 +7,7 @@
 .weather-icon{
     font-size: 6rem;
     position: absolute;
-    margin-top: -1.2rem;
+    margin-top: -2.2rem;
 }
 
 .temperature{
@@ -22,11 +22,11 @@
 }
 
 .other-info{
-    margin-top: -4rem;
+    margin-top: -4.5rem;
 }
 
 .forecast{
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: space-around;
 }
@@ -36,9 +36,41 @@
 }
 
 .item-icon{
-    margin-top: .8rem;
+    margin-top: .5rem;
     font-size: 1.8rem;
 }
 .item-temp{
-    margin-top: .8rem;
+    margin-top: .5rem;
+}
+
+@media (max-width: 21.875rem) {
+
+    .temperature{
+        color: white;
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+        text-align: right;
+    }
+    
+    .temper-text{
+        font-size: 1.2rem;
+    }
+    
+    .other-info{
+        margin-top: -4rem;
+        font-size: .8rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+
+    .weather-icon{
+        font-size: 4rem;
+        position: absolute;
+        margin-top: -2.2rem;
+    }
+
+    .forecast{
+        display: none;
+    }
+
 }

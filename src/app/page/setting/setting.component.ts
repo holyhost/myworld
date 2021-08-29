@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
+import { ThemeService } from 'src/app/service/theme.service';
 
 @Component({
   selector: 'app-setting',
@@ -8,7 +9,9 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class SettingComponent implements OnInit {
   city:string = ''
-  constructor(public data: DataService) { }
+  constructor(
+    public data: DataService,
+    public theme: ThemeService) { }
 
   ngOnInit() {
   }
@@ -17,6 +20,10 @@ export class SettingComponent implements OnInit {
   save(event){
     this.data.aimCity = this.city
     event.stopPropagation()
+  }
+
+  changeTheme(theme:string){
+    this.theme.changeTheme(theme)
   }
 
 }

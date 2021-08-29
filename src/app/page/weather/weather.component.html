@@ -23,9 +23,10 @@
     <div class="other-info">
         <div class="location">
             <span *ngIf="data.aimCity">{{data.aimCity}}</span>
+            <span>&nbsp;&nbsp;{{dateUtil.getWeekDay(curDate)}}</span>
         </div>
         <div class="date-info">
-            {{dateUtil.getWeekDay(curDate)}}&nbsp;&nbsp;{{curDate | date:'yyyy/MM/dd'}}
+            {{curDate | date:'yyyy/MM/dd'}}
             <br>
             {{curDate | date: 'H:mm:ss'}}
         </div>

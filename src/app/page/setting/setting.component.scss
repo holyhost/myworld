@@ -34,3 +34,29 @@
 .btn-save:active{
     background: #003ca5;
 }
+.title{
+    display: flex;
+    margin-bottom: .2rem;
+}
+.bg-color{
+    display: inline-block;
+    height: 1.5rem;
+}
+
+.round-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: .7rem;
+    background-color: white;
+    display: inline-block;
+    margin-left: .5rem;
+}
+.round-icon2{
+    margin: 0 auto;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: .6rem;
+    background-color: black;
+    margin-top: .12rem;
+    
+}

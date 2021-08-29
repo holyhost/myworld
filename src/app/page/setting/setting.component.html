@@ -1,5 +1,18 @@
 <div class="setting-container">
-    <div class="title">设置</div>
+    <div class="title">
+        <div class="bg-color">背景色</div>
+        <!-- <button (click)="changeTheme(this.theme.themes.theme1)"> 
+            黑色主题
+        </button>
+      -->
+        <div class="round-icon" *ngFor="let item of theme.themes">
+            <div class="round-icon2"
+                (click)="changeTheme(item.theme)" 
+                [ngStyle]="{'background-color': item.color}">
+
+            </div>
+        </div>
+    </div>
     <div class="city-container">
         <span class="city-label">城市</span>
         <input class="city" type='text' placeholder='输入城市' [(ngModel)]="city">

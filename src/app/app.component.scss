@@ -1,6 +1,9 @@
+@import '../styles.scss';
 #app-container{
     background: #eb445a;
     opacity: .8;
+    min-width: 220px;
+    @include def_theme();
 }
 .app-menu{
     position: fixed;
