@@ -13,6 +13,7 @@
 
 .app-menu:hover{
     background-color: green;
+    border-radius: .8rem;
 }
 
 .menu-list{
@@ -23,7 +24,7 @@
     z-index: 100;
     text-align: right;
     background-color: gray;
-    opacity: .5;
+    opacity: .6;
     letter-spacing: .2rem;
     padding: .2rem;
     border-radius: .4rem;
@@ -33,4 +34,10 @@
     font-size: .8rem;
     height: 1rem;
     vertical-align: middle;
+}
+.menu-list-item:hover{
+    font-size: 1rem;
+    height: 1.1rem;
+    vertical-align: middle;
+    color: white;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
 import { DateUtilService } from 'src/app/service/date-util.service';
+import { IconService } from 'src/app/service/icon.service';
 
 @Component({
   selector: 'app-weather',
@@ -14,6 +15,7 @@ export class WeatherComponent implements OnInit {
   constructor(
     public dateUtil: DateUtilService,
     public data: DataService,
+    public icon: IconService,
     ) { }
 
   ngOnInit() {

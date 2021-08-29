@@ -36,4 +36,35 @@ export class DateUtilService {
     return days;
 
   }
+
+  number2Hanzi(num: string):string{
+      let aanum = Number.parseInt(num)
+      let hanzi = ''
+      switch(aanum){
+            case 1:
+                  hanzi = "一";
+                  break;
+            case 2:
+                  hanzi = "二";
+                  break;
+            case 3:
+                  hanzi = "三";
+                  break;
+            case 4:
+                  hanzi = "四";
+                  break;
+            case 5:
+                  hanzi = "五";
+                  break;
+            case 6:
+                  hanzi = "六";
+                  break;
+            case 7:
+                  hanzi = "日";
+                  break;
+            
+      }
+
+      return hanzi
+  }
 }

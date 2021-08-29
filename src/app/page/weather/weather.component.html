@@ -1,10 +1,10 @@
-<div class="weather-container card-container">
+<div class="weather-container">
     <!-- <div class="sun">
 
     </div> -->
     <div class="weather-icon">
         <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-qingtian"></use>
+            <use [attr.xlink:href]="icon.icon(data?.weatherInfo?.weather)"></use>
         </svg>
     </div>
     <!-- 实时天气信息 -->
@@ -33,10 +33,10 @@
     <!-- 天气预报 -->
     <div class="forecast" *ngIf="data.forecasts&&data.forecasts.forecasts">
         <div class="fore-item" *ngFor="let item of data.forecasts.forecasts">
-            <div class="item-week">星期{{item.week}}</div>
+            <div class="item-week">星期{{dateUtil.number2Hanzi(item.week)}}</div>
             <div class="item-icon">
                 <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-qingtian"></use>
+                    <use [attr.xlink:href]="icon.icon(item.dayWeather)"></use>
                 </svg>
             </div>
             <div class="item-temp">{{item.dayTemp}}℃</div>
