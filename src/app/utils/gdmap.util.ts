@@ -46,9 +46,7 @@ export class GdMap{
 
     async doSleep(){
       const start = new Date().getTime();
-       console.log("执行开始",start);
        await this.sleep(3000);
-       console.log("执行结束",new Date().getTime() - start)
     }
     /**
      * 通用定位
@@ -132,7 +130,6 @@ export class GdMap{
             });
             //执行未来天气信息查询
             weather.getForecast(city, function(err, data) {
-              console.log(err, data);
               forecast(data)
             });
         });

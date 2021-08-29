@@ -10,7 +10,7 @@ import { OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'myworld';
   open: boolean = false; // 控制菜单的显示
-  curIndex = 2;
+  curIndex = 0;
   menu:any[] = [
     {id:0,name:'map',icon:'#icon-ditu',label:'地图'},
     {id:0,name:'weather',icon:'#icon-tianqi',label:'天气'},
@@ -18,22 +18,21 @@ export class AppComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-
+    setTimeout(() => {
+      this.curIndex = 1
+    }, 2500);
     
   }
 
   pageClick(){
-    console.log('pageClick')
     this.open = false;
   }
   onMenuClick(event){
-    console.log('onMenuClick')
     this.open = !this.open
     event.stopPropagation()
   }
 
   onMenuItemClick(index:number= 0){
-    console.log(index)
     this.curIndex = index
   }
 

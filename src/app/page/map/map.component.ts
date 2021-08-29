@@ -28,7 +28,6 @@ export class MapComponent implements OnInit, AfterViewInit {
     await this.mapUtil.sleep(1200);
     this.data.mapUtil = this.mapUtil
     this.mapUtil.location(success=>{
-      console.log(success)
       let position = [success.position.lng,success.position.lat]
       this.mapUtil.map.setCenter(position)
       this.mapUtil.addSelfMarker(position[0],position[1])
@@ -36,7 +35,6 @@ export class MapComponent implements OnInit, AfterViewInit {
       console.log(error)
     })
     this.mapUtil.locateByIP(success=>{
-      console.log(success)
       this.data.aimCity = success.city
     },error=>{
       console.log(error)
