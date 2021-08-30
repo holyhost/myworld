@@ -7,9 +7,9 @@ export class ThemeService {
 
   curTheme: string = '';//当前的主题
   themes = [
-      {theme: 'theme1',color:'#4abdac'},
+      {theme: 'theme1',color:'#3880ff'},
       {theme: 'theme2',color:'#69bb7b'},
-      {theme: 'theme3',color:'#3880ff'},
+      {theme: 'theme3',color:'#4abdac'},
       {theme: 'theme4',color:'#ffc409'},
       {theme: 'theme5',color:'#de6dfd'},
       {theme: 'theme6',color:'#f9aeae'},

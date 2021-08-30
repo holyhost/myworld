@@ -11,7 +11,10 @@ export class SettingComponent implements OnInit {
   city:string = ''
   constructor(
     public data: DataService,
-    public theme: ThemeService) { }
+    public theme: ThemeService) { 
+      this.city = data.aimCity
+    }
+
 
   ngOnInit() {
   }
@@ -19,6 +22,8 @@ export class SettingComponent implements OnInit {
 
   save(event){
     this.data.aimCity = this.city
+    //保存城市名称
+    window.localStorage.setItem('myworld-city',this.city)
     event.stopPropagation()
   }
 

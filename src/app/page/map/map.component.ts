@@ -34,11 +34,14 @@ export class MapComponent implements OnInit, AfterViewInit {
     },error=>{
       console.log(error)
     })
-    this.mapUtil.locateByIP(success=>{
-      this.data.aimCity = success.city
-    },error=>{
-      console.log(error)
-    })
+    //如果没有目标地址的话，就通过ip定位
+    if(!this.data.aimCity){
+      this.mapUtil.locateByIP(success=>{
+        this.data.aimCity = success.city
+      },error=>{
+        console.log(error)
+      })
+    }
   }
 
   ngAfterViewInit(): void {

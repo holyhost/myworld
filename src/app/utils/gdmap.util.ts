@@ -3,7 +3,7 @@ import {load }  from '@amap/amap-jsapi-loader';
 /**
  * 高德地图工具类
  */
-//高德控制台申请创建的key，必填
+//高德控制台申请创建的key，必填,建议自己去高德申请一个替换掉。
 const mapKey='9c980d07975d0fcb86425520286312db';
 export class GdMap{
     map: any;//地图
@@ -104,7 +104,10 @@ export class GdMap{
               if (status === 'complete' && result.info === 'OK') {
                 // 查询成功，result即为当前所在城市信息
                 success(result)
-                self.city = result.city
+                if(!self.city){
+                  self.city = result.city
+                }
+                
               }else{
                 error(status)
               }
@@ -118,6 +121,9 @@ export class GdMap{
      * @param error 失败回调
      */
     public weatherInfo(city:string,success,forecast,error){
+      if(!city){
+        city = '北京市'
+      }
         let self = this;
         //加载天气查询插件
         this.Amap.plugin('AMap.Weather', function() {

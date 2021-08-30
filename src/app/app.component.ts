@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {load }  from '@amap/amap-jsapi-loader';
 import { OnInit } from '@angular/core';
+import { ThemeService } from './service/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +16,13 @@ export class AppComponent implements OnInit {
     {id:0,name:'weather',icon:'#icon-tianqi',label:'天气'},
     {id:0,name:'weather',icon:'#icon-shezhi',label:'设置'},
   ]
+  //传个theme，让他自动初始化
+  constructor(theme:ThemeService){}
 
   ngOnInit(): void {
     setTimeout(() => {
       this.curIndex = 1
     }, 2500);
-    
   }
 
   pageClick(){
