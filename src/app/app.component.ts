@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title = 'myworld';
   open: boolean = false; // 控制菜单的显示
   curIndex = 0;
+  showMsg: false;
   menu:any[] = [
     {id:0,name:'map',icon:'#icon-ditu',label:'地图'},
     {id:0,name:'weather',icon:'#icon-tianqi',label:'天气'},

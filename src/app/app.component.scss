@@ -45,3 +45,11 @@
     vertical-align: middle;
     color: white;
 }
+
+.top-message{
+    // position: absolute;
+    z-index: 999;
+    bottom: 1rem;
+    left:0;
+    right: 0;
+}
