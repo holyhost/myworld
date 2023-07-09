@@ -4,7 +4,7 @@ import {load }  from '@amap/amap-jsapi-loader';
  * 高德地图工具类
  */
 //高德控制台申请创建的key，必填,建议自己去高德申请一个替换掉。
-const mapKey='9c980d07975d0fcb86425520286312db';
+const mapKey='4e3c9c1d68de626f8374fb3627231fa0';
 export class GdMap{
     map: any;//地图
     Amap: any;//操作地图用的工具类
